@@ -1,0 +1,31 @@
+<!-- 
+  Usando as interpolações, {{  }}, conseguimos mostrar algum valor que está lá na nossa classe Typescript diretamente no HTML.
+  É como se criássemos uma lacuna no nosso HTML e o angular irá preencher com o valor da variável ou o código que escrevemos dentro da interpolação. 
+-->
+<!-- <h1>{{ _title }}</h1> -->
+
+<header id="cabecalho">
+  <div>
+  </div>
+  <div>
+      <img src="https://i.pinimg.com/originals/6f/ad/71/6fad7124fce96687ef4b971fb9457903.jpg" width="100" height="100" class="logo">
+  </div>
+  <div>
+  </div>
+</header>
+
+<div id="navbar">
+<a routerLink="/">Início</a>
+<a routerLink="/pagina-um">Cadastro</a>
+<a routerLink="/pagina-dois">Consulta</a>
+</div>
+
+<div id="tudo">
+  <router-outlet></router-outlet>
+</div>
+
+<footer id="rodape">
+  <marquee><h1>1</h1><marquee><h2>2</h2><marquee><h3>3</h3><marquee><h4>4</h4><marquee><h5>5</h5><marquee><h6>6</h6></marquee></marquee></marquee></marquee></marquee></marquee>
+</footer>
+
+<!-- <home></home> -->

@@ -1,0 +1,21 @@
+
+.texto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;   
+}
+
+.texto > h1{
+    color: aliceblue;
+}
+
+.texto > h1::selection{
+    color: rgb(0, 0, 0);
+    background-color: rgb(153, 32, 32);
+}
+
+.tudo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
