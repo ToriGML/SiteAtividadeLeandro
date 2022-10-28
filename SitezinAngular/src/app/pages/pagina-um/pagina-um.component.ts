@@ -6,14 +6,49 @@ import { Component, Input } from '@angular/core';
   styleUrls: ["./pagina-um.component.css"]
 })
 export class PaginaUmComponent {
+  nome: string;
+  email: string;
+  link: string;
+  pass: string;
+  confPass: string;
+  Estado: string;
+  Cidade: string;
+  Bairro: string;
+  idade: number;
 
-  // Usado para criar uma propriedade customizada para o nosso componente customizado.
-  // Dessa forma, conseguimos pegar 'inputar' valores para que o componente faça tarefas com esses valores.
-  // Nesse exemplo, estamos passando uma formatação de cor e conteúdo para um botão no nosso template.
+  olhoUm1(){
+    (<HTMLInputElement>document.getElementById('pass')).type = 'text';
+  }
+  olhoUm2(){
+    (<HTMLInputElement>document.getElementById('pass')).type = 'password';
+  }
+  olhoUm3(){
+    (<HTMLInputElement>document.getElementById('pass')).type = 'password';
+  }
+
+  olhoDois1(){
+    (<HTMLInputElement>document.getElementById('confPass')).type = 'text';
+  }
+  olhoDois2(){
+    (<HTMLInputElement>document.getElementById('confPass')).type = 'password';
+  }
+  olhoDois3(){
+    (<HTMLInputElement>document.getElementById('confPass')).type = 'password';
+  }
+
+  objeto(){
+    localStorage.setItem('nome', this.nome);
+    localStorage.setItem('email', this.email);
+    localStorage.setItem('confPass', this.confPass);
+    localStorage.setItem('Estado', this.Estado);
+    localStorage.setItem('Cidade', this.Cidade);
+    localStorage.setItem('Bairro', this.Bairro);
+    localStorage.setItem('Idade', String (this.idade));
+    localStorage.setItem('link', this.link);
+    localStorage.setItem('pass', this.pass);
+  }
+  
   @Input()
   corTexto = '#000000';
-
-  @Input()
-  texto = '';
 
 }

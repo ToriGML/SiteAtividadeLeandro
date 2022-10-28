@@ -1,7 +1,7 @@
 <div id="login">
     <h1 id="titulo">Cadastro</h1>
     <div class="form">
-   <input type="text" name="text" autocomplete="off" required id="name"/>
+   <input type="text" name="text" autocomplete="off" required [(ngModel)]="nome"/>
     <label for="text" class="label-name">
       <span class="content-name">
         Nome
@@ -9,7 +9,7 @@
     </label>
 </div><br>
 <div class="form">
-    <input type="text" name="text" autocomplete="off" required id="email"/>
+    <input type="text" name="text" autocomplete="off" required [(ngModel)]="email"/>
     <label for="text" class="label-name">
       <span class="content-name">
         Email
@@ -17,8 +17,8 @@
     </label>
 </div><br>
 <div class="form">
-    <img src="https://cdn0.iconfinder.com/data/icons/ui-icons-pack/100/ui-icon-pack-14-512.png" id="olho" class="olho">
-    <input type="password" name="text" autocomplete="off" required  id="pass" class="pass"/>
+    <img src="https://cdn0.iconfinder.com/data/icons/ui-icons-pack/100/ui-icon-pack-14-512.png" id="olho" class="olho" (mouseup)="olhoUm1()" (mousedown)="olhoUm2()" (mousemove)="olhoUm3()">
+    <input type="password" name="text" autocomplete="off" required  [(ngModel)]="pass" class="pass"/>
     <label for="text" class="label-name">
       <span class="content-name">
         Senha
@@ -26,7 +26,16 @@
     </label>
 </div><br>
 <div class="form">
-    <input type="text" name="text" autocomplete="off" required id="estado"/>
+  <img src="https://cdn0.iconfinder.com/data/icons/ui-icons-pack/100/ui-icon-pack-14-512.png" id="olho2" class="olho" (mouseup)="olhoDois1()" (mousedown)="olhoDois2()" (mousemove)="olhoDois3()">
+  <input type="password" name="text" autocomplete="off" required  [(ngModel)]="confPass" class="pass"/>
+  <label for="text" class="label-name">
+    <span class="content-name">
+      Confirme a senha
+    </span>
+  </label>
+</div><br>
+<div class="form">
+    <input type="text" name="text" autocomplete="off" required [(ngModel)]="Estado"/>
     <label for="text" class="label-name">
       <span class="content-name">
         Estado
@@ -34,7 +43,7 @@
     </label>
 </div><br>
 <div class="form">
-  <input type="text" name="text" autocomplete="off" required id="Cidade"/>
+  <input type="text" name="text" autocomplete="off" required [(ngModel)]="Cidade"/>
   <label for="text" class="label-name">
     <span class="content-name">
       Cidade
@@ -42,7 +51,7 @@
   </label>
 </div><br>
 <div class="form">
-<input type="text" name="text" autocomplete="off" required id="Bairro"/>
+<input type="text" name="text" autocomplete="off" required [(ngModel)]="Bairro"/>
 <label for="text" class="label-name">
   <span class="content-name">
     Bairro
@@ -60,7 +69,7 @@
 </div>
 </div><br>
 <div class="form">
-<input type="text" name="text" autocomplete="off" required id="Idade"/>
+<input type="number" name="text" autocomplete="off" required [(ngModel)]="idade" min="0" max="160"/>
 <label for="text" class="label-name">
 <span class="content-name">
   Idade
@@ -68,7 +77,7 @@
 </label>
 </div><br>
 <div class="form">
-<input type="text" name="text" autocomplete="off" required id="link"/>
+<input type="text" name="text" autocomplete="off" required [(ngModel)]="link"/>
 <label for="text" class="label-name">
 <span class="content-name">
   Link imagem
@@ -78,5 +87,5 @@
 <div id="MSGError">
   
 </div>
-<input type="submit" id="enviar" >
+<input type="submit" id="enviar" (click)="objeto()">
 </div>
