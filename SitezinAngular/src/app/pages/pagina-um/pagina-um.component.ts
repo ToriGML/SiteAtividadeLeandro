@@ -1,5 +1,4 @@
-import { JsonPipe } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'pagina-um',
@@ -39,13 +38,16 @@ export class PaginaUmComponent {
   }
   
     craftingTable(){
-      const pessoas: Object[] = JSON.parse(localStorage.getItem('pessoas')) || []
+      localStorage.setItem('link', this.link);
+      const brothers: Object[] = JSON.parse(localStorage.getItem('brothers')) || []
       if(this.genero == 'fem'){
         this.genero = "Feminino"
-      }else{
+      }else if(this.genero == 'masc'){
         this.genero = "Masculino"
+      }else{
+        this.genero = 'Neutro'
       }
-      pessoas.push({
+      brothers.push({
         nome: this.nome,
         email: this.email,
         link: this.link,
@@ -57,8 +59,7 @@ export class PaginaUmComponent {
         idade: this.idade,
         genero: this.genero
       })
-      localStorage.setItem('pessoas', JSON.stringify(pessoas))
+      localStorage.setItem('brothers', JSON.stringify(brothers))
     }
-
 
 }

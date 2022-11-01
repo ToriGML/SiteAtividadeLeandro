@@ -1,24 +1,19 @@
-<div id="cadastros">
-    <table style="color: aliceblue;" border="1">
-        <thead>
-            <th>nome</th>
-            <th>email</th>
-            <th>Estado</th>
-            <th>Cidade</th>
-            <th>Bairro</th>
-            <th>Idade</th>
-            <th>genero</th>
-            <th>imagem</th>
-        </thead>
-        <tbody *ngFor="let pessoa of pessoas" >
-            <td>{{pessoa.nome}}</td>
-            <td>{{pessoa.email}}</td>
-            <td>{{pessoa.Estado}}</td>
-            <td>{{pessoa.Cidade}}</td>
-            <td>{{pessoa.Bairro}}</td>
-            <td>{{pessoa.idade}}</td> 
-            <td>{{pessoa.genero}}</td>
-            <td><img src='{{pessoa.link}}' width="50" height="50"></td>
-        </tbody>
-    </table>
+ <h1 style="color: aliceblue;">All brothers and sisters that we have</h1>
+ <div id="cadastros">
+    <fieldset style="color: aliceblue; width: 60%; border-radius: 20px;" *ngFor="let brother of brothers">
+        <legend *ngIf="brother.genero == 'Feminino'; else elseBlock" [style.color]="cor">Sister</legend>
+        <ng-template #elseBlock><legend *ngIf="brother.genero == 'Masculino'; else elseBlock2" [style.color]="cor">Brother</legend></ng-template>
+        <ng-template #elseBlock2><legend *ngIf="brother.genero == 'Neutro'" [style.color]="cor">Entity</legend></ng-template>
+        <ul  style='list-style: none; margin-left: -20%;'>
+        <li >{{brother.nome}}</li>
+        <li>{{brother.email}}</li>
+        <li>{{brother.Estado}}</li>
+        <li>{{brother.Cidade}}</li>
+        <li>{{brother.Bairro}}</li>
+        <li>{{brother.idade}}</li>
+        <li [style.color]="cor">{{brother.genero}}</li>
+        <li><img src="{{brother.link}}" width="50" height="50"></li>
+        <li><meu-botao></meu-botao></li>
+    </ul>
+</fieldset>
 </div>

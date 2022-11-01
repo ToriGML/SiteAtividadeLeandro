@@ -7,6 +7,7 @@ import { AppRountingModule } from './app-routing.module';
 import { PaginaUmModule } from './pages/pagina-um/pagina-um.module';
 import { PaginaDoisModule } from './pages/pagina-dois/pagina-dois.module';
 import { FormsModule } from '@angular/forms';
+import { MeuBotaoModule } from './pages/meu-botao/meu-botao.module';
 
 @NgModule({
   
@@ -16,7 +17,8 @@ import { FormsModule } from '@angular/forms';
     HomeModule,
     AppRountingModule,
     PaginaUmModule,
-    PaginaDoisModule
+    PaginaDoisModule,
+    MeuBotaoModule
   ],
 
   declarations: [
