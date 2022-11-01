@@ -60,11 +60,11 @@
 </div><br>
 <div>
   <div class="radio">
-<input type="radio" id="Masc" name="genero" value="masc">
+<input type="radio" id="Masc" name="genero" value="masc" [(ngModel)]="genero"> 
 <label for="Masc">Masculino</label><br>
 </div><br>
 <div class="radio">
-<input type="radio" id="Fem" name="genero" value="fem">
+<input type="radio" id="Fem" name="genero" value="fem" [(ngModel)]="genero">
 <label for="Fem">Feminino</label>
 </div>
 </div><br>
@@ -87,5 +87,5 @@
 <div id="MSGError">
   
 </div>
-<input type="submit" id="enviar" (click)="objeto()">
+<input type="submit" id="enviar" (click)="craftingTable()">
 </div>

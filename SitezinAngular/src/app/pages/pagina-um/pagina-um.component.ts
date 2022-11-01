@@ -1,3 +1,4 @@
+import { JsonPipe } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
 @Component({
@@ -14,6 +15,7 @@ export class PaginaUmComponent {
   Estado: string;
   Cidade: string;
   Bairro: string;
+  genero: string;
   idade: number;
 
   olhoUm1(){
@@ -35,20 +37,28 @@ export class PaginaUmComponent {
   olhoDois3(){
     (<HTMLInputElement>document.getElementById('confPass')).type = 'password';
   }
-
-  objeto(){
-    localStorage.setItem('nome', this.nome);
-    localStorage.setItem('email', this.email);
-    localStorage.setItem('confPass', this.confPass);
-    localStorage.setItem('Estado', this.Estado);
-    localStorage.setItem('Cidade', this.Cidade);
-    localStorage.setItem('Bairro', this.Bairro);
-    localStorage.setItem('Idade', String (this.idade));
-    localStorage.setItem('link', this.link);
-    localStorage.setItem('pass', this.pass);
-  }
   
-  @Input()
-  corTexto = '#000000';
+    craftingTable(){
+      const pessoas: Object[] = JSON.parse(localStorage.getItem('pessoas')) || []
+      if(this.genero == 'fem'){
+        this.genero = "Feminino"
+      }else{
+        this.genero = "Masculino"
+      }
+      pessoas.push({
+        nome: this.nome,
+        email: this.email,
+        link: this.link,
+        pass: this.pass,
+        confPass: this.confPass,
+        Estado: this.Estado,
+        Cidade: this.Cidade,
+        Bairro: this.Bairro,
+        idade: this.idade,
+        genero: this.genero
+      })
+      localStorage.setItem('pessoas', JSON.stringify(pessoas))
+    }
+
 
 }

@@ -1,1 +1,24 @@
-<div id="cadastros"></div>
+<div id="cadastros">
+    <table style="color: aliceblue;" border="1">
+        <thead>
+            <th>nome</th>
+            <th>email</th>
+            <th>Estado</th>
+            <th>Cidade</th>
+            <th>Bairro</th>
+            <th>Idade</th>
+            <th>genero</th>
+            <th>imagem</th>
+        </thead>
+        <tbody *ngFor="let pessoa of pessoas" >
+            <td>{{pessoa.nome}}</td>
+            <td>{{pessoa.email}}</td>
+            <td>{{pessoa.Estado}}</td>
+            <td>{{pessoa.Cidade}}</td>
+            <td>{{pessoa.Bairro}}</td>
+            <td>{{pessoa.idade}}</td> 
+            <td>{{pessoa.genero}}</td>
+            <td><img src='{{pessoa.link}}' width="50" height="50"></td>
+        </tbody>
+    </table>
+</div>
